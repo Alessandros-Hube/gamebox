@@ -26,6 +26,6 @@ jobs:
       - name: Build & Push
         uses: docker/build-push-action@v5
         with:
-          context: ./frontend
+          context: ./frondend
           push: true
           tags: ghcr.io/alessandros-hube/gamebox/gamebox:latest
