@@ -32,7 +32,7 @@ jobs:
       - name: Build & Push
         uses: docker/build-push-action@v5
         with:
-          context: ./frontend
+          context: ./frondend
           file: ./frontend/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
