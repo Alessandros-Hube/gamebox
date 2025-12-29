@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   gamebox:
-    image: ghcr.io/Alessandros-Hube/gamebox/gamebox:latest
+    image: ghcr.io/alessandros-hube/gamebox/gamebox:latest
     container_name: gamebox
     ports:
       - "3000:80"
