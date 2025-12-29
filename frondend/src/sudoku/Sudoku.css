@@ -1,0 +1,114 @@
+.sudoku-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+}
+
+.info {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 0;
+    /* Wir nutzen borders */
+    background: black;
+    margin: 15px;
+}
+
+.cell-sudoku {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
+
+/* Dickere Linien für 3x3 Blöcke */
+.cell-sudoku:nth-child(9n+1) {
+    border-left: 4px solid #999;
+    /* linke Blockkante */
+}
+
+.cell-sudoku:nth-child(9n) {
+    border-right: 4px solid #999;
+    /* rechte Blockkante */
+}
+
+.cell-sudoku:nth-child(-n+9) {
+    border-top: 4px solid #999;
+    /* obere Blockkante */
+}
+
+.cell-sudoku:nth-child(n+73) {
+    border-bottom: 4px solid #999;
+    /* untere Blockkante */
+}
+
+/* Alternativ: jede 3. Reihe/Spalte */
+.cell-sudoku:nth-child(3n) {
+    border-right: 4px solid #999;
+}
+
+.cell-sudoku:nth-child(n+19):nth-child(-n+27),
+.cell-sudoku:nth-child(n+46):nth-child(-n+54),
+.cell-sudoku:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 4px solid #999;
+}
+
+.cell-sudoku.fixed {
+    background: #eee;
+    font-weight: bold;
+}
+
+.cell-sudoku.error {
+    background: #f99;
+}
+
+.cell-sudoku.highlight {
+    background: #9cf;
+}
+
+.buttons {
+    margin: 5px;
+}
+
+.winner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.winner-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px black;
+    color: black;
+}
+
+.winner-box button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
