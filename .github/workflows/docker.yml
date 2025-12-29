@@ -28,4 +28,4 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ghcr.io/${{ github.repository }}/gamebox:latest
+          tags: ghcr.io/alessandros-hube/gamebox/gamebox:latest
